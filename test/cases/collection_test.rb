@@ -45,7 +45,7 @@ end
 
 class PaginatedCollection < ActiveResource::Collection
   attr_accessor :next_page
-  def initialize(parsed = {})
+  def initialize(parsed = {}, responce = nil)
     @elements = parsed['results']
     @next_page = parsed['next_page']
   end
