@@ -35,7 +35,7 @@ module ActiveResource
 
       messages.each do |(key,errors)|
         errors.each do |error|
-          if @base.attributes.keys.include?(key)
+          if @base.attributes.keys.include?(key)  or @base.schema.keys.include?(key)
             add key, error
           elsif key == 'base'
             self[:base] << error
